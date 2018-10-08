@@ -3,7 +3,7 @@ a *cohesive* layer of *composable* abstractions over the dom.
 
 [](dependency)
 ```clojure
-[hoplon/ui "0.3.0-SNAPSHOT"] ;; latest release
+[vigilancetech/ui "0.3.0-SNAPSHOT"] ;; latest release
 ```
 [](/dependency)
 

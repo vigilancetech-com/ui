@@ -1,7 +1,7 @@
 (set-env!
   :resource-paths #{"lib/src"}
-  :dependencies '[[org.clojure/clojure                      "1.8.0"          :scope "provided"]
-                  [org.clojure/clojurescript                "1.9.494"        :scope "provided"]
+  :dependencies '[[org.clojure/clojure                      "1.9.0"          :scope "provided"]
+                  [org.clojure/clojurescript                "1.10.339"        :scope "provided"]
                   [adzerk/env                               "0.4.0"          :scope "test"]
                   [adzerk/boot-cljs                         "1.7.228-2"      :scope "test"]
                   [adzerk/boot-test                         "1.1.2"          :scope "test"]
@@ -11,8 +11,10 @@
                   [tailrecursion/boot-static                "0.1.0"          :scope "test"]
                   [tailrecursion/boot-bucket                "0.2.1-SNAPSHOT" :scope "test"]
                   [tailrecursion/boot-front                 "0.1.0-SNAPSHOT" :scope "test"]
-                  [hoplon/hoplon                            "7.0.1"]
-                  [cljsjs/markdown                          "0.6.0-beta1-0"]])
+                  [hoplon/hoplon                            "7.3.0-SNAPSHOT"]
+;                  [hoplon/hoplon                            "7.2.0"]
+                [tailrecursion/cljs-priority-map "1.2.1"]
+                  [cljsjs/markdown                          "LATEST"]])
 
 (require
   '[adzerk.bootlaces          :refer :all]
@@ -132,11 +134,11 @@
     (comp (hoplon) (cljs :optimizations o :compiler-options c) (serve) (t/test :namespaces namespaces))))
 
 (task-options!
-  pom    {:project         'hoplon/ui
+  pom    {:project         'vigilancetech/ui
           :version         +version+
           :description     "a cohesive layer of composable abstractions over the dom."
-          :url             "https://github.com/hoplon/ui"
-          :scm             {:url "https://github.com/hoplon/ui"}
+          :url             "https://github.com/vigilancetech-com/ui"
+          :scm             {:url "https://github.com/vigilancetech-com/ui"}
           :license         {"EPL" "http://www.eclipse.org/legal/epl-v10.html"}}
   serve {:port 5000}
   sift  {:include #{#"index.html.out/" #"hoplon/"} :invert true}
